@@ -3,7 +3,7 @@ use std::io::{self, BufRead, Error};
 fn parse_line(line: Result<String, Error>) -> Vec<i32> {
     match line {
         Ok(l) => {
-            let mut parts = l.split_whitespace();
+            let parts = l.split_whitespace();
             let mut res = vec![];
             for part in parts {
                 res.push(part.parse::<i32>().unwrap());

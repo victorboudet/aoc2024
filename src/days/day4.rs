@@ -69,17 +69,9 @@ fn part2(chars: &Vec<char>, line_size: usize) -> i32 {
     tot
 }
 
-pub fn main() {
-    match fs::read_to_string("input/day4.txt") {
-        Ok(input) => {
-            let chars: Vec<char> = input.chars().collect();
-            let line_size = input.lines().next().map(|line| line.len()).unwrap_or(0);
-            println!("{}", part1(&chars, line_size));
-            println!("{}", part2(&chars, line_size));
-        }
-        Err(e) => {
-            println!("Error reading file: {:?}", e);
-            panic!();
-        }
-    }
+pub fn main(input: String) {
+    let chars: Vec<char> = input.chars().collect();
+    let line_size = input.lines().next().map(|line| line.len()).unwrap_or(0);
+    println!("{}", part1(&chars, line_size));
+    println!("{}", part2(&chars, line_size));
 }

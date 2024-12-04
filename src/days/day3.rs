@@ -12,8 +12,7 @@ fn extract_mul_numbers(s: &str) -> Option<(i32, i32)> {
     }
 }
 
-fn part1(input: &String) -> i32 {
-    let s = input.as_str();
+fn part1(s: &str) -> i32 {
     let mut tot = 0;
     for i in 0..s.len() {
         let shifted = &s[i..];
@@ -24,8 +23,7 @@ fn part1(input: &String) -> i32 {
     tot
 }
 
-fn part2(input: &String) -> i32 {
-    let s = input.as_str();
+fn part2(s: &str) -> i32 {
     let mut tot = 0;
     let mut activate = true;
     for i in 0..s.len() {
@@ -46,15 +44,8 @@ fn part2(input: &String) -> i32 {
     tot
 }
 
-pub fn main() {
-    match fs::read_to_string("input/day3.txt") {
-        Ok(input) => {
-            println!("{}", part1(&input));
-            println!("{}", part2(&input));
-        }
-        Err(e) => {
-            println!("Error reading file: {:?}", e);
-            panic!();
-        }
-    }
+pub fn main(input: String) {
+    let s = input.as_str();
+    println!("{}", part1(&s));
+    println!("{}", part2(&s));
 }

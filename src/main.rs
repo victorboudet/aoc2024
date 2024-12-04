@@ -1,5 +1,5 @@
-mod day4;
+mod days;
 
 fn main() {
-    day4::main();
+    days::launch_day(3);
 }
